@@ -1,5 +1,7 @@
 import base64  # noqa: I001
 
+from uuid import uuid4
+
 import requests
 from flask import Blueprint, abort
 from flask import current_app as app
@@ -191,7 +193,7 @@ def register():
 
     if request.method == "POST":
         name = request.form.get("name", "").strip()
-        email_address = request.form.get("email", "").strip().lower()
+        email_address = str(uuid4()) + '@a.lsadkjflksddjf'
         password = request.form.get("password", "").strip()
 
         website = request.form.get("website")
